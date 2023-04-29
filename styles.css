@@ -86,7 +86,7 @@ a {
 }
 
 /* ---- Header Nav ----*/
-nav {
+nav @media (max-width: 768px) {
   margin: 0;
   padding: 0;
 }
