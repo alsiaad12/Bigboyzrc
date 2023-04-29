@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../alsiaad12.github.io"
+		},
+		{
+			"name": "alsiaad12.github.io-1",
+			"path": "../../alsiaad12.github.io/alsiaad12.github.io-1"
+		}
+	],
+	"settings": {
+		"CodeGPT.model": "gpt-3.5-turbo",
+		"liveServer.settings.port": 5501
+	}
+}
