@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sales Zone</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header class="nav-header">
+        <nav>
+            <div class="logo-search-login">
+                <a href="index.html"><img class="logo" src="logo white.purple.jfif" alt=""></a>
+                <div class="div-search-container">
+                    <form class="search-container">
+                        <input type="text" id="search-bar" placeholder="How Can I Help You">
+                        <a href="#"><img class="search-icon"
+                                src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+                    </form>
+                </div>
+                <div class="login-cart">
+                    <img class="login" src="login.png" alt="login">
+                    <img class="cart" src="cart.png" alt="login">
+                </div>
+            </div>
+            <div>
+                <ul class="first-level">
+                    <!--first-level-->
+                    <li>
+                        <label for="drop-1" class="toggle">SALES</label>
+                        <a href="sales.html">SALES</a>
+                    </li>
+                    <li>
+                        <label for="drop-2" class="toggle">Hot Wheels +</label>
+                        <a href="hot wheels.html">Hot Wheels</a>
+                        <input type="checkbox" id="drop-2" />
+                        <ul class="second-level">
+                            <!--second level-->
+                            <li>
+                                <label for="drop-6" class="toggle">Fast & Furious +</label>
+                                <a href="hotwheels-f&f.html">Fast & Furious</a>
+                                <input type="checkbox" id="drop-6" />
+                            </li>
+                            <li>
+                                <label for="drop-7" class="toggle">2023G case +</label>
+                                <a href="hotwheels-2023 g.html">2023G case</a>
+                                <input type="checkbox" id="drop-7" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label for="drop-3" class="toggle">RC Cars +</label>
+                        <a href="RC cars.html">RC Cars</a>
+                        <input type="checkbox" id="drop-3" />
+                        <ul class="second-level">
+                            <!--second level-->
+                            <li>
+                                <label for="drop-11" class="toggle">Drifting +</label>
+                                <a href="RC cars drifting.html">Drifting</a>
+                                <input type="checkbox" id="drop-11" />
+                            </li>
+                            <li>
+                                <label for="drop-12" class="toggle">Rally +</label>
+                                <a href="RC cars rally.html">Rally</a>
+                                <input type="checkbox" id="drop-12" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label for="drop-4" class="toggle">Maintenance</label>
+                        <a href="maintainenance.html">Maintenance</a>
+                        <input type="checkbox" id="drop-4" />
+                        <ul class="second-level">
+                            <!--second level-->
+                            <li>
+                                <ul class="third-level">
+                                    <!--Third level-->
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><label for="drop-5" class="toggle">Events +</label>
+                        <a href="events.html">Events</a>
+                        <input type="checkbox" id="drop-5" />
+                        <ul class="second-level">
+                            <!--second level-->
+                            <li>
+                                <ul class="third-level">
+                                    <!--Third level-->
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <body>
+        <header>
+            <h1>Car Maintenance and Spare Parts Import Services</h1>
+            <h3>Remember to emphasize your expertise and experience in RC car maintenance and your ability to source and
+                import rare or hard-to-find parts.</h2>
+        </header>
+        <main>
+            <h2>Our Services</h2>
+            <p>We offer a wide range of car maintenance and spare parts import services:</p>
+            <div class="image-container">
+                <img src="mainta/7.jpg" alt="maintain your car from here">
+                <img src="mainta/sac.png" alt="maintain your car from here">
+                <img src="mainta/2.webp" alt="maintain your car from here">
+                <img src="mainta/3.jpg" alt="maintain your car from here">
+                <img src="mainta/4.jpg" alt="maintain your car from here">
+                <img src="mainta/full.jpg" alt="maintain your car from here">
+                <img src="mainta/8.jpg" alt="maintain your car from here">
+                <img src="mainta/9.jpg" alt="maintain your car from here">
+                <img src="mainta/10.jpg" alt="maintain your car from here">
+                <img src="mainta/11.jpg" alt="maintain your car from here">
+                <div class="controls">
+                    <button class="prev">Prev</button>
+                    <button class="next">Next</button>
+                </div>
+            </div>
+            <script>
+                // Set the duration (in milliseconds) for each image to appear
+                const duration = 4000;
+
+                // Get a reference to the image container
+                const container = document.querySelector('.image-container');
+
+                // Get a reference to all the images inside the container
+                const images = container.querySelectorAll('img');
+
+                // Set the initial index to 0
+                let index = 0;
+
+                // Add the 'active' class to the first image to show it by default
+                images[index].classList.add('active');
+
+                // Define a function to show the next image
+                function showNextImage() {
+                    // Hide the current image
+                    images[index].classList.remove('active');
+
+                    // Increment the index
+                    index++;
+
+                    // If we've reached the end of the images, start over at the beginning
+                    if (index >= images.length) {
+                        index = 0;
+                    }
+
+                    // Show the next image
+                    images[index].classList.add('active');
+                }
+
+                // Call the showNextImage function every 'duration' milliseconds
+                setInterval(showNextImage, duration);
+
+                // Get a reference to the 'prev' and 'next' buttons
+                const prevButton = container.querySelector('.prev');
+                const nextButton = container.querySelector('.next');
+
+                // Add an event listener to the 'prev' button
+                prevButton.addEventListener('click', () => {
+                    // Hide the current image
+                    images[index].classList.remove('active');
+
+                    // Decrement the index
+                    index--;
+
+                    // If we've reached the beginning of the images, go to the end
+                    if (index < 0) {
+                        index = images.length - 1;
+                    }
+
+                    // Show the previous image
+                    images[index].classList.add('active');
+                });
+
+                // Add an event listener to the 'next' button
+                nextButton.addEventListener('click', () => {
+                    // Hide the current image
+                    images[index].classList.remove('active');
+
+                    // Increment the index
+                    index++;
+
+                    // If we've reached the end of the images, start over at the beginning
+                    if (index >= images.length) {
+                        index = 0;
+                    }
+
+                    // Show the next image
+                    images[index].classList.add('active');
+                });
+            </script>
+            <ul>
+                <li>Regular maintenance checks and tune-ups to ensure optimal performance.</li>
+                <li>Diagnosis and repair of common issues like motor problems, battery issues, and suspension failures.
+                </li>
+                <li>Upgrades and modifications to improve speed, handling, and durability.</li>
+                <li>Importation of hard-to-find spare parts from overseas to ensure that customers can always get the
+                    parts they need.</li>
+                <li>Customization services like painting and decaling to give customers a truly unique RC car.</li>
+                <li>Consultations on how to get the most out of their RC car and improve their driving skills.</li>
+                <li>Provide advice on how to properly care for their RC car to ensure a long lifespan.</li>
+            </ul>
+            <footer>
+                <p>For more information, contact us on:</p>
+                <div class="footer-social-media-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100090636712736" target="_blank">
+                    <img src="facebook.png" alt="Facebook icon"></a>
+                    <a href="https://wa.me/+01550242334" target="_blank">
+                    <img src="whatsapp.png" alt="WhatsApp icon"></a>
+                    <a href="https://www.instagram.com/bigboys_rc/" target="_blank">
+                    <img src="Instagram_icon.png.webp" alt="Instagram icon"></a>
+                </div>
+            </footer>
+    </body>
+
+</html>

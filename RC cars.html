@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sales Zone</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header class="nav-header">
+        <nav>
+            <div class="logo-search-login">
+                <a href="index.html"><img class="logo" src="logo white.purple.jfif" alt=""></a>
+                <div class="div-search-container">
+                    <form class="search-container">
+                        <input type="text" id="search-bar" placeholder="How Can I Help You">
+                        <a href="#"><img class="search-icon"
+                                src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+                    </form>
+                </div>
+                <div class="login-cart">
+                    <img class="login" src="login.png" alt="login">
+                    <img class="cart" src="cart.png" alt="login">
+                </div>
+            </div>
+            <div>
+                <ul class="first-level">
+                    <!--first-level-->
+                    <li>
+                        <label for="drop-1" class="toggle">SALES</label>
+                        <a href="sales.html">SALES</a>
+                    </li>
+                    <li>
+                        <label for="drop-2" class="toggle">Hot Wheels +</label>
+                        <a href="hot wheels.html">Hot Wheels</a>
+                        <input type="checkbox" id="drop-2" />
+                        <ul class="second-level">
+                            <!--second level-->
+                            <li>
+                                <label for="drop-6" class="toggle">Fast & Furious +</label>
+                                <a href="hotwheels-f&f.html">Fast & Furious</a>
+                                <input type="checkbox" id="drop-6" />
+                            </li>
+                            <li>
+                                <label for="drop-7" class="toggle">2023G case +</label>
+                                <a href="hotwheels-2023 g.html">2023G case</a>
+                                <input type="checkbox" id="drop-7" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label for="drop-3" class="toggle">RC Cars +</label>
+                        <a href="RC cars.html">RC Cars</a>
+                        <input type="checkbox" id="drop-3" />
+                        <ul class="second-level">
+                            <!--second level-->
+                            <li>
+                                <label for="drop-11" class="toggle">Drifting +</label>
+                                <a href="RC cars drifting.html">Drifting</a>
+                                <input type="checkbox" id="drop-11" />
+                            </li>
+                            <li>
+                                <label for="drop-12" class="toggle">Rally +</label>
+                                <a href="RC cars rally.html">Rally</a>
+                                <input type="checkbox" id="drop-12" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label for="drop-4" class="toggle">Maintenance</label>
+                        <a href="maintainenance.html">Maintenance</a>
+                        <input type="checkbox" id="drop-4" />
+                        <ul class="second-level">
+                            <!--second level-->
+                            <li>
+                                <ul class="third-level">
+                                    <!--Third level-->
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><label for="drop-5" class="toggle">Events +</label>
+                        <a href="events.html">Events</a>
+                        <input type="checkbox" id="drop-5" />
+                        <ul class="second-level">
+                            <!--second level-->
+                            <li>
+                                <ul class="third-level">
+                                    <!--Third level-->
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="image-container">
+            <img src="RC cars/1.webp" alt="maintain your car from here">
+            <img src="RC cars/2.webp" alt="maintain your car from here">
+            <img src="RC cars/3.webp" alt="maintain your car from here">
+            <img src="RC cars/4.webp" alt="maintain your car from here">
+            <img src="RC cars/5.webp" alt="maintain your car from here">
+            <img src="RC cars/6.webp" alt="maintain your car from here">
+            <img src="RC cars/7.webp" alt="maintain your car from here">
+            <img src="RC cars/8.webp" alt="maintain your car from here">
+            <div class="controls">
+                <button class="prev">Prev</button>
+                <button class="next">Next</button>
+            </div>
+        </div>
+        <script>
+            // Set the duration (in milliseconds) for each image to appear
+            const duration = 4000;
+
+            // Get a reference to the image container
+            const container = document.querySelector('.image-container');
+
+            // Get a reference to all the images inside the container
+            const images = container.querySelectorAll('img');
+
+            // Set the initial index to 0
+            let index = 0;
+
+            // Add the 'active' class to the first image to show it by default
+            images[index].classList.add('active');
+
+            // Define a function to show the next image
+            function showNextImage() {
+                // Hide the current image
+                images[index].classList.remove('active');
+
+                // Increment the index
+                index++;
+
+                // If we've reached the end of the images, start over at the beginning
+                if (index >= images.length) {
+                    index = 0;
+                }
+
+                // Show the next image
+                images[index].classList.add('active');
+            }
+
+            // Call the showNextImage function every 'duration' milliseconds
+            setInterval(showNextImage, duration);
+
+            // Get a reference to the 'prev' and 'next' buttons
+            const prevButton = container.querySelector('.prev');
+            const nextButton = container.querySelector('.next');
+
+            // Add an event listener to the 'prev' button
+            prevButton.addEventListener('click', () => {
+                // Hide the current image
+                images[index].classList.remove('active');
+
+                // Decrement the index
+                index--;
+
+                // If we've reached the beginning of the images, go to the end
+                if (index < 0) {
+                    index = images.length - 1;
+                }
+
+                // Show the previous image
+                images[index].classList.add('active');
+            });
+
+            // Add an event listener to the 'next' button
+            nextButton.addEventListener('click', () => {
+                // Hide the current image
+                images[index].classList.remove('active');
+
+                // Increment the index
+                index++;
+
+                // If we've reached the end of the images, start over at the beginning
+                if (index >= images.length) {
+                    index = 0;
+                }
+
+                // Show the next image
+                images[index].classList.add('active');
+            });
+        </script>
+
+        <body>
+            <h1>Choose a Category:</h1>
+            <div>
+                <h2>Drifting</h2>
+                <p>Experience the thrill of drifting with our RC cars! Our high-performance drifting RC cars are perfect
+                    for both beginners and pros alike. With advanced features such as 4-wheel drive, adjustable
+                    suspension, and precise steering, you'll have complete control as you drift around corners with
+                    ease. Our cars are built to last, with durable materials and powerful motors that can handle even
+                    the toughest terrain. Get ready to race and drift like a pro with our drifting RC cars today!</p>
+                <a href="hotwheels-f&f.html">Go to Drifting cars</a>
+            </div>
+            <div>
+                <h2>Rally</h2>
+                <p>Get ready to hit the dirt with our rally RC cars! Experience the thrill of off-road racing with our
+                    high-performance cars that can handle any terrain. From rocky hills to muddy tracks, our rally cars
+                    will take you on an adventure you'll never forget. With precision controls and powerful motors,
+                    you'll be able to navigate through obstacles and make sharp turns with ease. Whether you're a
+                    seasoned racer or just starting out, our rally RC cars are perfect for anyone who loves the thrill
+                    of speed and competition. So what are you waiting for? Get your rally car today and start your
+                    journey to the winner's circle!</p>
+                <a href="hotwheels-2023 g.html">Go to Rally Cars</a>
+            </div>
+        </body>
+    </main>
+
+    <footer>
+        <p>For more information, contact us on:</p>
+        <div class="footer-social-media-icons">
+            <a href="https://www.facebook.com/profile.php?id=100090636712736" target="_blank">
+            <img src="facebook.png" alt="Facebook icon"></a>
+            <a href="https://wa.me/+01550242334" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp icon"></a>
+            <a href="https://www.instagram.com/bigboys_rc/" target="_blank">
+            <img src="Instagram_icon.png.webp" alt="Instagram icon"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

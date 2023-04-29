@@ -1,0 +1,506 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Oswald&display=swap");
+/* ---- reset ---- */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  Xcolor: black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 147%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+/* ---- typography ---- */
+h1 {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 60px;
+  line-height: 70px;
+  font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  line-height: 34px;
+  text-align: center;
+  color: #1c1616;
+}
+
+h3 a {
+  color: #FFF;
+}
+
+p {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  color: #101010;
+}
+
+/* ---- layout ---- */
+.container {
+  margin: 0 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 728px;
+    margin: 0 auto;
+  }
+}
+
+/* ---- components ---- */
+.button {
+  width: 100%;
+  background-color: #FFDE3B;
+  color: #101010;
+  border: 1px solid #fff;
+}
+
+.button-alt {
+  color: blue;
+  background-color: #fff;
+}
+
+/* ---- Header Nav ----*/
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 15px 70px;
+  color: #101010;
+  font-size: 17px;
+  text-decoration: none;
+  text-align: center; 
+}
+
+nav a:hover {
+  background-color: #FFDE3B;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul ul {
+  display: none;
+}
+
+nav .logo-search-login {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .logo-search-login div.div-search-container {
+  height: 45px;
+  width: 50%;
+}
+
+nav .logo-search-login .login-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+nav .logo-search-login img {
+  margin: 0 5%;
+}
+
+nav .logo-search-login .logo {
+  width: 150px;
+  height: 90px;
+}
+
+nav .logo-search-login .cart {
+  width: 30px;
+  height: 30px;
+}
+
+nav .logo-search-login .login {
+  width: 30px;
+  height: 30px;
+}
+
+nav label, nav label.toggle {
+  font-size: 15px;
+  color: #101010;
+}
+
+nav .first-level {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (20%)[5];
+      grid-template-columns: repeat(5, 20%);
+  width: 100%;
+  position: relative;
+  background: #FFDE3B;
+}
+
+nav .first-level .second-level {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  background: #D8D8D8;
+}
+
+nav .first-level .second-level .third-level {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 100%;
+  background: #D8D8D8;
+  width: 33%;
+}
+
+nav ul li ul li:hover {
+  background: #FFDE3B;
+}
+
+.toggle,
+[id^=drop] {
+  display: none;
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+/* Media Queries
+--------------------------------------------- */
+@media all and (max-width: 768px) {
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  .toggle + a,
+  .menu {
+    display: none;
+  }
+  /* Stylinf the toggle lable */
+  .toggle {
+    display: block;
+    padding: 14px 20px;
+    font-size: 17px;
+    text-decoration: none;
+    border: none;
+  }
+  .toggle:hover {
+    background-color: #FFDE3B;
+  }
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^=drop]:checked + ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+  nav a:hover,
+  nav ul ul ul a {
+    Xbackground-color: #000000;
+  }
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    padding: 14px 20px;
+    font-size: 17px;
+  }
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    position: static;
+    /* has to be the same number as the "line-height" of "nav a" */
+  }
+  /* Hide menus on hover */
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: none;
+  }
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+  nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+  }
+}
+
+@media all and (max-width: 330px) {
+  nav ul li {
+    display: block;
+    width: 94%;
+  }
+}
+
+.search-container {
+  display: block;
+  width: 100%;
+}
+
+input#search-bar {
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #D0CFCE;
+  outline: none;
+}
+
+input#search-bar:focus {
+  border: 1px solid #008ABF;
+  -webkit-transition: 0.35s ease;
+  transition: 0.35s ease;
+  color: #008ABF;
+}
+
+input#search-bar:focus::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+
+input#search-bar:focus::-moz-placeholder {
+  -webkit-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+
+input#search-bar:focus:-ms-placeholder {
+  -webkit-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+
+.search-icon {
+  position: relative;
+  float: right;
+  width: 75px;
+  height: 75px;
+  top: -75px;
+  right: -95px;
+}
+
+main header {
+  background: #101010;
+  padding: .5em 1em;
+  color: #d8d8d8;
+  width: 1140px;
+  height: 250px;
+}
+
+header h1 {
+  font-weight: 200;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eeeeee;
+}
+
+.container-fluid {
+  max-width: 1200px;
+}
+
+.col {
+  background: #efefef;
+  padding-bottom: .75rem;
+  width: 100%;
+}
+
+.card {
+  background: #d8d8d8;
+  -webkit-box-shadow: 0 3px 10px #ffde3b;
+          box-shadow: 0 3px 10px #ffde3b;
+  padding-bottom: 20px;
+}
+
+.card img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-height: full;
+}
+
+.card-block {
+  padding: 1.5em 1em;
+}
+/*# sourceMappingURL=styles.css.map */
+main{
+  margin: auto;
+  max-width:1140px;
+  margin-bottom: 100px
+}
+.main-elements-container{
+display:flex;
+flex-direction: row;
+flex-wrap:wrap;
+}
+
+.element{
+  margin-left: 10px;
+  width:23%;
+}
+.element img{
+  width:100%;
+}
+
+footer {
+  background-color: #ffde3b;
+  padding: 5px;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.footer-social-media-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-social-media-icons img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.product img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70%;
+}
+
+.image-container {
+  width: 900px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  margin-top: 60px
+}
+
+.image-container img.active {
+  opacity: 1;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.container {
+  margin: 20px auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+}
+.card h2 {
+  margin: 10px;
+}
+.card p {
+  margin: 10px;
+}
